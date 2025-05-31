@@ -49,38 +49,53 @@ export function createInventoryContent(): string {
               </svg>
             </div>
             
-            <!-- Sort Dropdown -->
-            <select class="px-3 py-2 bg-black/40 border border-white/20 rounded-lg text-white focus:border-amber-400/50 focus:outline-none cursor-pointer" id="inventory-sort">
-              <option value="name">Sort by Name</option>
-              <option value="type">Sort by Type</option>
-              <option value="rarity">Sort by Rarity</option>
-              <option value="level">Sort by Level</option>
-              <option value="value">Sort by Value</option>
-              <option value="weight">Sort by Weight</option>
-            </select>
+            <!-- Sort Buttons -->
+            <div class="flex gap-2">
+              <button class="sort-btn active w-full h-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500/80 to-amber-600/80 text-white text-xs font-bold rounded-lg transition-all duration-200 hover:scale-105" data-sort="name">
+                📝 Name
+              </button>
+              <button class="sort-btn w-full h-full flex items-center justify-center gap-2 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-sort="type">
+                📋 Type
+              </button>
+              <button class="sort-btn w-full h-full flex items-center justify-center gap-2 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-sort="rarity">
+                ⭐ Rarity
+              </button>
+              <button class="sort-btn w-full h-full flex items-center justify-center gap-2 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-sort="level">
+                🔢 Level
+              </button>
+              <button class="sort-btn w-full h-full flex items-center justify-center gap-2 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-sort="value">
+                💰 Value
+              </button>
+              <button class="sort-btn w-full h-full flex items-center justify-center gap-2 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-sort="weight">
+                📏 Weight
+              </button>
+            </div>
           </div>
 
           <!-- Filter Categories -->
-          <div class="flex gap-2 flex-wrap">
-            <button class="filter-btn active px-3 py-1.5 bg-gradient-to-r from-amber-500/80 to-amber-600/80 text-white text-xs font-bold rounded-lg transition-all duration-200 hover:scale-105" data-filter="all">
+          <div class="grid grid-cols-2 gap-2 md:grid-cols-4 relative z-0">
+            <button class="filter-btn active w-full px-4 py-2 bg-gradient-to-r from-amber-500/80 to-amber-600/80 text-white text-sm font-bold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg relative z-20" data-filter="all">
               All Items
             </button>
-            <button class="filter-btn px-3 py-1.5 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-filter="weapons">
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20" data-filter="weapons">
               ⚔️ Weapons
             </button>
-            <button class="filter-btn px-3 py-1.5 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-filter="armor">
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20 touch-action:manipulation user-select:none" data-filter="armor">
               🛡️ Armor
             </button>
-            <button class="filter-btn px-3 py-1.5 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-filter="consumables">
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20" data-filter="consumables">
               🧪 Consumables
             </button>
-            <button class="filter-btn px-3 py-1.5 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-filter="materials">
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20" data-filter="materials">
               🔧 Materials
             </button>
-            <button class="filter-btn px-3 py-1.5 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-filter="quest">
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20" data-filter="quest">
               📜 Quest Items
             </button>
-            <button class="filter-btn px-3 py-1.5 bg-black/30 border border-white/20 text-white/70 text-xs font-medium rounded-lg hover:bg-white/10 transition-all duration-200" data-filter="misc">
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20" data-filter="junk">
+              🗑️ Junk
+            </button>
+            <button class="filter-btn w-full px-4 py-2 bg-black/30 border border-white/20 text-white/70 text-sm font-medium rounded-xl hover:bg-white/10 hover:shadow-sm transition-all duration-300 relative z-20" data-filter="misc">
               💎 Misc
             </button>
           </div>
@@ -232,6 +247,64 @@ export function createInventoryContent(): string {
         color: white !important;
       }
 
+      .filter-btn {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        user-select: none;
+        position: relative;
+      }
+
+      .filter-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .filter-btn .emoji {
+        font-size: 1rem;
+        line-height: 1;
+      }
+
+      .filter-btn .label {
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .sort-btn {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        user-select: none;
+        position: relative;
+      }
+
+      .sort-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .sort-btn.active {
+        background: linear-gradient(to right, rgba(245, 158, 11, 0.8), rgba(217, 119, 6, 0.8)) !important;
+        border-color: rgba(245, 158, 11, 0.6) !important;
+        color: white !important;
+      }
+
+      .sort-btn .emoji {
+        font-size: 1rem;
+        line-height: 1;
+      }
+
+      .sort-btn .label {
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
       .item-stack {
         position: absolute;
         bottom: 2px;
@@ -310,10 +383,41 @@ export function initializeInventory() {
   }
 
   // Sort functionality
-  const sortSelect = document.getElementById('inventory-sort');
-  if (sortSelect) {
-    sortSelect.addEventListener('change', handleSort);
-    console.log('🎒 Sort functionality initialized');
+  const sortButtons = document.querySelectorAll('.sort-btn');
+  if (sortButtons.length > 0) {
+    sortButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const sortValue = target.dataset.sort;
+        
+        // Remove active class from all buttons
+        sortButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        target.classList.add('active');
+        
+        // Call sort handler with the selected value
+        const value = sortValue || 'name'; // Fallback to 'name' if sortValue is undefined
+        const sortTarget = {
+          value,
+          addEventListener: () => {},
+          dispatchEvent: () => true,
+          removeEventListener: () => {}
+        } as EventTarget & { value: string };
+        
+        // Create a custom event that extends Event and includes our target
+        const SortEvent = class extends Event {
+          target: EventTarget & { value: string };
+          constructor(type: string, init?: EventInit) {
+            super(type, init);
+            this.target = sortTarget;
+          }
+        };
+        
+        const sortEvent = new SortEvent('change', { bubbles: true });
+        handleSort(sortEvent as unknown as Event);
+      });
+    });
+    console.log(`🎒 Sort functionality initialized (${sortButtons.length} buttons)`);
   }
 
   // Item interaction
@@ -389,10 +493,26 @@ function handleFilter(event: Event) {
   
   slots.forEach(slot => {
     const slotElement = slot as HTMLElement;
-    if (filter === 'all' || slotElement.dataset.itemType === filter || !slotElement.dataset.item) {
+    const itemType = slotElement.dataset.itemType?.toLowerCase() || '';
+    const itemName = slotElement.dataset.itemName?.toLowerCase() || '';
+    
+    // Determine if item is junk based on its name or type
+    const isJunk = itemName.includes('trash') || 
+                  itemName.includes('rags') || 
+                  itemName.includes('teeth') || 
+                  itemName.includes('bloodied') || 
+                  itemName.includes('broken') || 
+                  itemName.includes('scrap') || 
+                  itemName.includes('rotten');
+    
+    // Show item based on filter type
+    if (filter === 'all') {
       slotElement.style.display = 'block';
+    } else if (filter === 'junk') {
+      slotElement.style.display = isJunk ? 'block' : 'none';
     } else {
-      slotElement.style.display = 'none';
+      // For other categories, show only items that match the exact type
+      slotElement.style.display = itemType === filter ? 'block' : 'none';
     }
   });
 }
